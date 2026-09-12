@@ -1,0 +1,14 @@
+Normal-only Operating-Point Transport Audit
+Prepared: 2026-09-12
+Public DOI: TO_BE_ASSIGNED
+
+experiments/OPERATING_POINT_TRANSPORT_REPORT_SCHEMA_V1.json
+experiments/tables/calibration_resampled_matched_v1.json
+experiments/tables/calibration_size_matched_v1.json
+experiments/tables/operating_point_transport_rankings_v1.json
+experiments/tables/operating_point_transport_report_v1.json
+experiments/CALIBRATION_RESAMPLED_PROTOCOL.md
+scripts/build_operating_point_transport_report.py
+scripts/validate_operating_point_transport_report.py
+tests/test_operating_point_transport_report.py
+requirements.txt
