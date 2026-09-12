@@ -1,0 +1,5132 @@
+{
+  "schema_version": "1.1.0",
+  "study": {
+    "dataset": "MVTec AD 2 public",
+    "evidence_timing": "post-result-corrective",
+    "categories": [
+      "can",
+      "fabric",
+      "fruit_jelly",
+      "rice",
+      "sheet_metal",
+      "vial",
+      "wallplugs",
+      "walnuts"
+    ],
+    "detectors": [
+      "patchcore",
+      "padim",
+      "efficient_ad"
+    ],
+    "seeds": [
+      17,
+      42,
+      73
+    ],
+    "seed_aggregation": "mean; seeds are not independent images"
+  },
+  "matched_analysis": {
+    "estimand_version": "loo-matched-v1",
+    "estimand": "mean over validation deletions, fixed target normals, and seeds of I(target>t_-i)-I(source_i>t_-i)",
+    "calibration_threshold": "n-1 leave-one-out threshold shared by source and target indicators",
+    "target_normals_fixed": true,
+    "confidence": 0.95,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260813,
+    "uncertainty_scope": "approximate calibration-sample inference conditional on fixed target-normal benchmark",
+    "family_multiplicity": "24 cells controlled within each family; no control across eight families",
+    "gate": {
+      "minimum_categories": 2,
+      "minimum_detectors": 2,
+      "all_families_must_pass": true,
+      "passed": true
+    },
+    "families": [
+      {
+        "family_id": "empirical_p95:image-score",
+        "threshold": {
+          "rule": "empirical_p95",
+          "definition": "empirical 0.95 quantile",
+          "parameters": {
+            "quantile": 0.95,
+            "quantile_method": "higher"
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "image-score",
+        "family_size": 24,
+        "critical_value": 4.53503435888708,
+        "positive_cell_count": 10,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "vial",
+          "wallplugs",
+          "walnuts"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434782,
+            "target_normal_fpr": 0.4635668276972625,
+            "observed_matched_gap": 0.3983494363929146,
+            "bootstrap_standard_error": 0.052827773813212776,
+            "lower_bound": 0.15877366704647952,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434782,
+            "target_normal_fpr": 0.6391908212560387,
+            "observed_matched_gap": 0.5739734299516909,
+            "bootstrap_standard_error": 0.04613828130354144,
+            "lower_bound": 0.3647347389801331,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434781,
+            "target_normal_fpr": 0.8567834138486313,
+            "observed_matched_gap": 0.7915660225442834,
+            "bootstrap_standard_error": 0.02170145002631097,
+            "lower_bound": 0.6931492010372923,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.06976744186046512,
+            "target_normal_fpr": 0.1614987080103359,
+            "observed_matched_gap": 0.0917312661498708,
+            "bootstrap_standard_error": 0.08957732685942518,
+            "lower_bound": -0.3145049889348808,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.0697674418604651,
+            "target_normal_fpr": 0.11827578106647872,
+            "observed_matched_gap": 0.04850833920601362,
+            "bootstrap_standard_error": 0.05012879757119565,
+            "lower_bound": -0.1788274801490538,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.06976744186046512,
+            "target_normal_fpr": 0.7528776133427296,
+            "observed_matched_gap": 0.6831101714822645,
+            "bootstrap_standard_error": 0.020155939399106593,
+            "lower_bound": 0.5917022937716703,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405405,
+            "target_normal_fpr": 0.15,
+            "observed_matched_gap": 0.09594594594594594,
+            "bootstrap_standard_error": 0.07161207393087525,
+            "lower_bound": -0.22881726984173503,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.05405405405405406,
+            "bootstrap_standard_error": 0.054327793876633786,
+            "lower_bound": -0.30043246592712336,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.03333333333333333,
+            "observed_matched_gap": -0.020720720720720717,
+            "bootstrap_standard_error": 0.06992862154597042,
+            "lower_bound": -0.3378494221013079,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.05714285714285714,
+            "target_normal_fpr": 0.12040816326530612,
+            "observed_matched_gap": 0.06326530612244899,
+            "bootstrap_standard_error": 0.05493308541594257,
+            "lower_bound": -0.1858581236785293,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.057142857142857134,
+            "target_normal_fpr": 0.017233560090702947,
+            "observed_matched_gap": -0.039909297052154194,
+            "bootstrap_standard_error": 0.022450559554724473,
+            "lower_bound": -0.1417233560090703,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.05714285714285714,
+            "target_normal_fpr": 0.6913832199546485,
+            "observed_matched_gap": 0.6342403628117914,
+            "bootstrap_standard_error": 0.02953209764750982,
+            "lower_bound": 0.5003112852903261,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.0043859649122807015,
+            "observed_matched_gap": -0.04824561403508772,
+            "bootstrap_standard_error": 0.11853029223574293,
+            "lower_bound": -0.5857845618931085,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.41959064327485385,
+            "observed_matched_gap": 0.3669590643274854,
+            "bootstrap_standard_error": 0.03660096127559678,
+            "lower_bound": 0.2009724473743585,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.7638888888888888,
+            "observed_matched_gap": 0.7112573099415205,
+            "bootstrap_standard_error": 0.02473961259491145,
+            "lower_bound": 0.5990623167980416,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.02322880371660859,
+            "observed_matched_gap": -0.025551684088269456,
+            "bootstrap_standard_error": 0.053773155448434,
+            "lower_bound": -0.2694147916326936,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28710801393728225,
+            "observed_matched_gap": 0.2383275261324042,
+            "bootstrap_standard_error": 0.042544186163950476,
+            "lower_bound": 0.0453881801080005,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.25993031358885016,
+            "observed_matched_gap": 0.21114982578397218,
+            "bootstrap_standard_error": 0.127567716797004,
+            "lower_bound": -0.3673741529752173,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.12912457912457911,
+            "observed_matched_gap": 0.06851851851851852,
+            "bootstrap_standard_error": 0.07725537234380248,
+            "lower_bound": -0.2818372494692403,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.09393939393939393,
+            "observed_matched_gap": 0.03333333333333334,
+            "bootstrap_standard_error": 0.050649978468551564,
+            "lower_bound": -0.1963660592984388,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.6784511784511785,
+            "observed_matched_gap": 0.6178451178451179,
+            "bootstrap_standard_error": 0.03392160432858009,
+            "lower_bound": 0.46400947670643444,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0625,
+            "target_normal_fpr": 0.07951388888888888,
+            "observed_matched_gap": 0.01701388888888889,
+            "bootstrap_standard_error": 0.04156350808076754,
+            "lower_bound": -0.17147804833327268,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0625,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.0625,
+            "bootstrap_standard_error": 0.013861063218137024,
+            "lower_bound": -0.12536039794495732,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06249999999999999,
+            "target_normal_fpr": 0.340625,
+            "observed_matched_gap": 0.27812499999999996,
+            "bootstrap_standard_error": 0.05132658590881372,
+            "lower_bound": 0.04535716937916032,
+            "unsupported": false,
+            "supports_positive_gap": true
+          }
+        ]
+      },
+      {
+        "family_id": "empirical_p95:map-maximum-image-decision",
+        "threshold": {
+          "rule": "empirical_p95",
+          "definition": "empirical 0.95 quantile",
+          "parameters": {
+            "quantile": 0.95,
+            "quantile_method": "higher"
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "map-maximum-image-decision",
+        "family_size": 24,
+        "critical_value": 4.758697064575018,
+        "positive_cell_count": 10,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "vial",
+          "wallplugs",
+          "walnuts"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434782,
+            "target_normal_fpr": 0.4459541062801932,
+            "observed_matched_gap": 0.3807367149758454,
+            "bootstrap_standard_error": 0.05130871698460944,
+            "lower_bound": 0.13657407407407407,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434782,
+            "target_normal_fpr": 0.6391908212560387,
+            "observed_matched_gap": 0.5739734299516909,
+            "bootstrap_standard_error": 0.04613828130354144,
+            "lower_bound": 0.35441532614799176,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.06521739130434781,
+            "target_normal_fpr": 0.8567834138486313,
+            "observed_matched_gap": 0.7915660225442834,
+            "bootstrap_standard_error": 0.02170145002631097,
+            "lower_bound": 0.6882953960070559,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.06976744186046512,
+            "target_normal_fpr": 0.1720695325346488,
+            "observed_matched_gap": 0.1023020906741837,
+            "bootstrap_standard_error": 0.07400800482850167,
+            "lower_bound": -0.24987958465826096,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.0697674418604651,
+            "target_normal_fpr": 0.11827578106647872,
+            "observed_matched_gap": 0.04850833920601362,
+            "bootstrap_standard_error": 0.05012879757119565,
+            "lower_bound": -0.19003942264671042,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.06976744186046512,
+            "target_normal_fpr": 0.7528776133427296,
+            "observed_matched_gap": 0.6831101714822645,
+            "bootstrap_standard_error": 0.020155939399106593,
+            "lower_bound": 0.587194161829984,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.15,
+            "observed_matched_gap": 0.09594594594594594,
+            "bootstrap_standard_error": 0.07138879824705766,
+            "lower_bound": -0.24377171871586553,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.05405405405405406,
+            "bootstrap_standard_error": 0.054327793876633786,
+            "lower_bound": -0.3125835672996279,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.03333333333333333,
+            "observed_matched_gap": -0.020720720720720717,
+            "bootstrap_standard_error": 0.06992862154597042,
+            "lower_bound": -0.3534898468013075,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.05714285714285714,
+            "target_normal_fpr": 0.09750566893424036,
+            "observed_matched_gap": 0.04036281179138322,
+            "bootstrap_standard_error": 0.06548524098278606,
+            "lower_bound": -0.27126161224638845,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.057142857142857134,
+            "target_normal_fpr": 0.017233560090702947,
+            "observed_matched_gap": -0.039909297052154194,
+            "bootstrap_standard_error": 0.022450559554724473,
+            "lower_bound": -0.14674470890328817,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.05714285714285714,
+            "target_normal_fpr": 0.6913832199546485,
+            "observed_matched_gap": 0.6342403628117914,
+            "bootstrap_standard_error": 0.02953209764750982,
+            "lower_bound": 0.49370605642584364,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.007309941520467836,
+            "observed_matched_gap": -0.04532163742690058,
+            "bootstrap_standard_error": 0.12524158221920642,
+            "lower_bound": -0.6413083870961689,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.41959064327485385,
+            "observed_matched_gap": 0.3669590643274854,
+            "bootstrap_standard_error": 0.03660096127559678,
+            "lower_bound": 0.19278617734467907,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.7638888888888888,
+            "observed_matched_gap": 0.7112573099415205,
+            "bootstrap_standard_error": 0.02473961259491145,
+            "lower_bound": 0.5935289881073922,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.04320557491289198,
+            "observed_matched_gap": -0.005574912891986064,
+            "bootstrap_standard_error": 0.062087911123381335,
+            "lower_bound": -0.30103247330041544,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28710801393728225,
+            "observed_matched_gap": 0.2383275261324042,
+            "bootstrap_standard_error": 0.042544186163950476,
+            "lower_bound": 0.03587263231927998,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.25993031358885016,
+            "observed_matched_gap": 0.21114982578397218,
+            "bootstrap_standard_error": 0.127567716797004,
+            "lower_bound": -0.39590629367246793,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.1239057239057239,
+            "observed_matched_gap": 0.0632996632996633,
+            "bootstrap_standard_error": 0.08665234126475445,
+            "lower_bound": -0.3490525787154764,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.09393939393939393,
+            "observed_matched_gap": 0.03333333333333334,
+            "bootstrap_standard_error": 0.050649978468551564,
+            "lower_bound": -0.20769457052575085,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06060606060606061,
+            "target_normal_fpr": 0.6784511784511785,
+            "observed_matched_gap": 0.6178451178451179,
+            "bootstrap_standard_error": 0.03392160432858009,
+            "lower_bound": 0.4564224789010286,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0625,
+            "target_normal_fpr": 0.10104166666666667,
+            "observed_matched_gap": 0.03854166666666667,
+            "bootstrap_standard_error": 0.03916180868939123,
+            "lower_bound": -0.1478175173869878,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0625,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.0625,
+            "bootstrap_standard_error": 0.013861063218137024,
+            "lower_bound": -0.1284606008480374,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.06249999999999999,
+            "target_normal_fpr": 0.340625,
+            "observed_matched_gap": 0.27812499999999996,
+            "bootstrap_standard_error": 0.05132658590881372,
+            "lower_bound": 0.033877326301070626,
+            "unsupported": false,
+            "supports_positive_gap": true
+          }
+        ]
+      },
+      {
+        "family_id": "mvtec_mean_plus_3std:image-score",
+        "threshold": {
+          "rule": "mvtec_mean_plus_3std",
+          "definition": "population mean plus three population standard deviations",
+          "parameters": {
+            "std_multiplier": 3.0,
+            "ddof": 0
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "image-score",
+        "family_size": 24,
+        "critical_value": 4.892304573711356,
+        "positive_cell_count": 8,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "vial",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.09883252818035428,
+            "observed_matched_gap": 0.09883252818035426,
+            "bootstrap_standard_error": 0.026043309898026685,
+            "lower_bound": -0.02857927594834392,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.014492753623188404,
+            "target_normal_fpr": 0.46859903381642515,
+            "observed_matched_gap": 0.45410628019323673,
+            "bootstrap_standard_error": 0.06805861412342831,
+            "lower_bound": 0.12114281103673213,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.02898550724637681,
+            "target_normal_fpr": 0.8064613526570048,
+            "observed_matched_gap": 0.7774758454106281,
+            "bootstrap_standard_error": 0.03240739955496528,
+            "lower_bound": 0.6189289763457801,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.007751937984496124,
+            "target_normal_fpr": 0.006225041108762038,
+            "observed_matched_gap": -0.0015268968757340847,
+            "bootstrap_standard_error": 0.01394769057299329,
+            "lower_bound": -0.06976324725869992,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.031007751937984496,
+            "target_normal_fpr": 0.031007751937984496,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.021291017236773947,
+            "lower_bound": -0.10416214100643649,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.007751937984496124,
+            "target_normal_fpr": 0.7094197791872211,
+            "observed_matched_gap": 0.7016678412027249,
+            "bootstrap_standard_error": 0.010851804649037228,
+            "lower_bound": 0.6485775076852178,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.018018018018018018,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.018018018018018018,
+            "bootstrap_standard_error": 0.01832045135123498,
+            "lower_bound": -0.1076472459561213,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.02415050654235109,
+            "lower_bound": -0.14517866064161727,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0009009009009009008,
+            "observed_matched_gap": -0.026126126126126126,
+            "bootstrap_standard_error": 0.04849815579728992,
+            "lower_bound": -0.2633938755497735,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.0675736961451247,
+            "observed_matched_gap": 0.039002267573696146,
+            "bootstrap_standard_error": 0.03306850178271315,
+            "lower_bound": -0.12277891494365353,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.019047619047619046,
+            "target_normal_fpr": 0.0004535147392290249,
+            "observed_matched_gap": -0.018594104308390022,
+            "bootstrap_standard_error": 0.011242053293093832,
+            "lower_bound": -0.07359365305209979,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.019047619047619046,
+            "target_normal_fpr": 0.6072562358276644,
+            "observed_matched_gap": 0.5882086167800453,
+            "bootstrap_standard_error": 0.022727687468963045,
+            "lower_bound": 0.47701784742575515,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.05263157894736842,
+            "bootstrap_standard_error": 0.061688017678266566,
+            "lower_bound": -0.3544281499779389,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.017543859649122806,
+            "target_normal_fpr": 0.2916666666666667,
+            "observed_matched_gap": 0.2741228070175439,
+            "bootstrap_standard_error": 0.051743793961742175,
+            "lower_bound": 0.020976407157334565,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.017543859649122806,
+            "target_normal_fpr": 0.6695906432748538,
+            "observed_matched_gap": 0.6520467836257311,
+            "bootstrap_standard_error": 0.02823983925269678,
+            "lower_bound": 0.5138888888888892,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.024390243902439025,
+            "bootstrap_standard_error": 0.019146270162424272,
+            "lower_bound": -0.11805962898758054,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28617886178861784,
+            "observed_matched_gap": 0.23739837398373986,
+            "bootstrap_standard_error": 0.03320398856250915,
+            "lower_bound": 0.0749543488739168,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.20185830429732865,
+            "observed_matched_gap": 0.17746806039488966,
+            "bootstrap_standard_error": 0.08651736980393183,
+            "lower_bound": -0.24580126360236282,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.07390572390572389,
+            "observed_matched_gap": 0.0739057239057239,
+            "bootstrap_standard_error": 0.03096852598252973,
+            "lower_bound": -0.07760173739970526,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0101010101010101,
+            "target_normal_fpr": 0.041077441077441074,
+            "observed_matched_gap": 0.030976430976430977,
+            "bootstrap_standard_error": 0.025671803020256023,
+            "lower_bound": -0.09461784835498456,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0202020202020202,
+            "target_normal_fpr": 0.618013468013468,
+            "observed_matched_gap": 0.5978114478114478,
+            "bootstrap_standard_error": 0.04015538630527472,
+            "lower_bound": 0.40135906773100594,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.002893518518518518,
+            "observed_matched_gap": 0.0028935185185185184,
+            "bootstrap_standard_error": 0.013541665237024323,
+            "lower_bound": -0.06335643225624366,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.020833333333333332,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.020833333333333332,
+            "bootstrap_standard_error": 0.013896436802700956,
+            "lower_bound": -0.08881893466147803,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.020833333333333332,
+            "target_normal_fpr": 0.15856481481481483,
+            "observed_matched_gap": 0.13773148148148148,
+            "bootstrap_standard_error": 0.06824785823747614,
+            "lower_bound": -0.1961578275197273,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      },
+      {
+        "family_id": "mvtec_mean_plus_3std:map-maximum-image-decision",
+        "threshold": {
+          "rule": "mvtec_mean_plus_3std",
+          "definition": "population mean plus three population standard deviations",
+          "parameters": {
+            "std_multiplier": 3.0,
+            "ddof": 0
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "map-maximum-image-decision",
+        "family_size": 24,
+        "critical_value": 4.9636914158394,
+        "positive_cell_count": 8,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "vial",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0592793880837359,
+            "observed_matched_gap": 0.05927938808373591,
+            "bootstrap_standard_error": 0.02558643263486889,
+            "lower_bound": -0.06772376794791589,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.014492753623188404,
+            "target_normal_fpr": 0.46859903381642515,
+            "observed_matched_gap": 0.45410628019323673,
+            "bootstrap_standard_error": 0.06805861412342831,
+            "lower_bound": 0.11628432149484946,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.02898550724637681,
+            "target_normal_fpr": 0.8064613526570048,
+            "observed_matched_gap": 0.7774758454106281,
+            "bootstrap_standard_error": 0.03240739955496528,
+            "lower_bound": 0.6166155144299693,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0011745360582569883,
+            "observed_matched_gap": 0.0011745360582569885,
+            "bootstrap_standard_error": 0.011523662783425143,
+            "lower_bound": -0.05602536997885836,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.031007751937984496,
+            "target_normal_fpr": 0.031007751937984496,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.021291017236773947,
+            "lower_bound": -0.10568203949266354,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.007751937984496124,
+            "target_normal_fpr": 0.7094197791872211,
+            "observed_matched_gap": 0.7016678412027249,
+            "bootstrap_standard_error": 0.010851804649037228,
+            "lower_bound": 0.6478028316199327,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.009009009009009009,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.009009009009009009,
+            "bootstrap_standard_error": 0.01656083625134112,
+            "lower_bound": -0.09121188974891288,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.02415050654235109,
+            "lower_bound": -0.1469026890394684,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0009009009009009008,
+            "observed_matched_gap": -0.026126126126126126,
+            "bootstrap_standard_error": 0.04849815579728992,
+            "lower_bound": -0.26685600574117596,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.053061224489795916,
+            "observed_matched_gap": 0.024489795918367342,
+            "bootstrap_standard_error": 0.036725107703194725,
+            "lower_bound": -0.15780230593375774,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.019047619047619046,
+            "target_normal_fpr": 0.0004535147392290249,
+            "observed_matched_gap": -0.018594104308390022,
+            "bootstrap_standard_error": 0.011242053293093832,
+            "lower_bound": -0.07439618773572894,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.019047619047619046,
+            "target_normal_fpr": 0.6072562358276644,
+            "observed_matched_gap": 0.5882086167800453,
+            "bootstrap_standard_error": 0.022727687468963045,
+            "lower_bound": 0.47539538958847277,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.05263157894736842,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.05263157894736842,
+            "bootstrap_standard_error": 0.07192271306470766,
+            "lower_bound": -0.4096337323905381,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.017543859649122806,
+            "target_normal_fpr": 0.2916666666666667,
+            "observed_matched_gap": 0.2741228070175439,
+            "bootstrap_standard_error": 0.051743793961742175,
+            "lower_bound": 0.017282581106681683,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.017543859649122806,
+            "target_normal_fpr": 0.6695906432748538,
+            "observed_matched_gap": 0.6520467836257311,
+            "bootstrap_standard_error": 0.02823983925269678,
+            "lower_bound": 0.5118729359424355,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.024390243902439025,
+            "bootstrap_standard_error": 0.02028242605152164,
+            "lower_bound": -0.12506594798677442,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28617886178861784,
+            "observed_matched_gap": 0.23739837398373986,
+            "bootstrap_standard_error": 0.03320398856250915,
+            "lower_bound": 0.07258402098438357,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.20185830429732865,
+            "observed_matched_gap": 0.17746806039488966,
+            "bootstrap_standard_error": 0.08651736980393183,
+            "lower_bound": -0.2519774654218897,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0101010101010101,
+            "target_normal_fpr": 0.06464646464646463,
+            "observed_matched_gap": 0.05454545454545455,
+            "bootstrap_standard_error": 0.03738998241829372,
+            "lower_bound": -0.13104688022261607,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0101010101010101,
+            "target_normal_fpr": 0.041077441077441074,
+            "observed_matched_gap": 0.030976430976430977,
+            "bootstrap_standard_error": 0.025671803020256023,
+            "lower_bound": -0.09645047730433383,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0202020202020202,
+            "target_normal_fpr": 0.618013468013468,
+            "observed_matched_gap": 0.5978114478114478,
+            "bootstrap_standard_error": 0.04015538630527472,
+            "lower_bound": 0.39849250150824067,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.021296296296296296,
+            "observed_matched_gap": 0.021296296296296296,
+            "bootstrap_standard_error": 0.018220147457103195,
+            "lower_bound": -0.06914289323185491,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.020833333333333332,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.020833333333333332,
+            "bootstrap_standard_error": 0.013896436802700956,
+            "lower_bound": -0.08981095740165479,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.020833333333333332,
+            "target_normal_fpr": 0.15856481481481483,
+            "observed_matched_gap": 0.13773148148148148,
+            "bootstrap_standard_error": 0.06824785823747614,
+            "lower_bound": -0.20102982660130317,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      },
+      {
+        "family_id": "split_conformal_05:image-score",
+        "threshold": {
+          "rule": "split_conformal_05",
+          "definition": "finite-sample upper-tail split-conformal quantile",
+          "parameters": {
+            "alpha": 0.05
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "image-score",
+        "family_size": 24,
+        "critical_value": 5.311450147222588,
+        "positive_cell_count": 7,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "vial",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.04347826086956521,
+            "target_normal_fpr": 0.4363929146537842,
+            "observed_matched_gap": 0.39291465378421897,
+            "bootstrap_standard_error": 0.047714124320905694,
+            "lower_bound": 0.13948346113534754,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.043478260869565216,
+            "target_normal_fpr": 0.6167471819645732,
+            "observed_matched_gap": 0.5732689210950082,
+            "bootstrap_standard_error": 0.06314137837695914,
+            "lower_bound": 0.23789663761887142,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.04347826086956521,
+            "target_normal_fpr": 0.8476247987117553,
+            "observed_matched_gap": 0.8041465378421901,
+            "bootstrap_standard_error": 0.029362078407958243,
+            "lower_bound": 0.6481913221594792,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.04651162790697674,
+            "target_normal_fpr": 0.12285647169368098,
+            "observed_matched_gap": 0.07634484378670425,
+            "bootstrap_standard_error": 0.07784298534910797,
+            "lower_bound": -0.337114292206061,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.046511627906976744,
+            "target_normal_fpr": 0.06800563777307964,
+            "observed_matched_gap": 0.021494009866102885,
+            "bootstrap_standard_error": 0.04108648176586249,
+            "lower_bound": -0.19673478975804562,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.046511627906976744,
+            "target_normal_fpr": 0.7284472633309843,
+            "observed_matched_gap": 0.6819356354240075,
+            "bootstrap_standard_error": 0.019419335763095864,
+            "lower_bound": 0.5787908016261472,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.004054054054054054,
+            "observed_matched_gap": -0.022972972972972974,
+            "bootstrap_standard_error": 0.07410516274602703,
+            "lower_bound": -0.4165788505503121,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.023068949885138627,
+            "lower_bound": -0.1495566042907171,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0009009009009009008,
+            "observed_matched_gap": -0.026126126126126126,
+            "bootstrap_standard_error": 0.039205305959149665,
+            "lower_bound": -0.23436315423475823,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.09591836734693877,
+            "observed_matched_gap": 0.0673469387755102,
+            "bootstrap_standard_error": 0.03118271760629904,
+            "lower_bound": -0.09827851124526721,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.00816326530612245,
+            "observed_matched_gap": -0.02040816326530612,
+            "bootstrap_standard_error": 0.014469184199515973,
+            "lower_bound": -0.09726051381201598,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.6287981859410431,
+            "observed_matched_gap": 0.6002267573696145,
+            "bootstrap_standard_error": 0.02765413292766463,
+            "lower_bound": 0.4533432089596572,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.02322880371660859,
+            "observed_matched_gap": -0.025551684088269456,
+            "bootstrap_standard_error": 0.053773155448434,
+            "lower_bound": -0.3111651185114773,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28710801393728225,
+            "observed_matched_gap": 0.2383275261324042,
+            "bootstrap_standard_error": 0.042544186163950476,
+            "lower_bound": 0.012356202268424266,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.25993031358885016,
+            "observed_matched_gap": 0.21114982578397218,
+            "bootstrap_standard_error": 0.127567716797004,
+            "lower_bound": -0.466419742378324,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.12777777777777777,
+            "observed_matched_gap": 0.09747474747474748,
+            "bootstrap_standard_error": 0.0416462638941546,
+            "lower_bound": -0.12372730701713071,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.045791245791245785,
+            "observed_matched_gap": 0.015488215488215488,
+            "bootstrap_standard_error": 0.040849453864746366,
+            "lower_bound": -0.20148162225565389,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.6131313131313131,
+            "observed_matched_gap": 0.5828282828282828,
+            "bootstrap_standard_error": 0.03599145431360775,
+            "lower_bound": 0.3916614675155159,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.041666666666666664,
+            "target_normal_fpr": 0.06180555555555556,
+            "observed_matched_gap": 0.02013888888888889,
+            "bootstrap_standard_error": 0.03238257897176211,
+            "lower_bound": -0.15185956495812403,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.041666666666666664,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.041666666666666664,
+            "bootstrap_standard_error": 0.012991515395827442,
+            "lower_bound": -0.11067045302847886,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.041666666666666664,
+            "target_normal_fpr": 0.3282407407407407,
+            "observed_matched_gap": 0.28657407407407404,
+            "bootstrap_standard_error": 0.07725088496680346,
+            "lower_bound": -0.12374015025592938,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      },
+      {
+        "family_id": "split_conformal_05:map-maximum-image-decision",
+        "threshold": {
+          "rule": "split_conformal_05",
+          "definition": "finite-sample upper-tail split-conformal quantile",
+          "parameters": {
+            "alpha": 0.05
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "map-maximum-image-decision",
+        "family_size": 24,
+        "critical_value": 5.435205901969409,
+        "positive_cell_count": 7,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "vial",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.043478260869565216,
+            "target_normal_fpr": 0.4178743961352657,
+            "observed_matched_gap": 0.3743961352657005,
+            "bootstrap_standard_error": 0.03851734060310715,
+            "lower_bound": 0.16504645829152653,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.043478260869565216,
+            "target_normal_fpr": 0.6167471819645732,
+            "observed_matched_gap": 0.5732689210950082,
+            "bootstrap_standard_error": 0.06314137837695914,
+            "lower_bound": 0.23008252868207618,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.04347826086956521,
+            "target_normal_fpr": 0.8476247987117553,
+            "observed_matched_gap": 0.8041465378421901,
+            "bootstrap_standard_error": 0.029362078407958243,
+            "lower_bound": 0.6445575959851669,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.046511627906976744,
+            "target_normal_fpr": 0.07540521494009866,
+            "observed_matched_gap": 0.028893587033121917,
+            "bootstrap_standard_error": 0.0687806648834677,
+            "lower_bound": -0.3449434886828818,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.046511627906976744,
+            "target_normal_fpr": 0.06800563777307964,
+            "observed_matched_gap": 0.021494009866102885,
+            "bootstrap_standard_error": 0.04108648176586249,
+            "lower_bound": -0.20181947831887145,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.046511627906976744,
+            "target_normal_fpr": 0.7284472633309843,
+            "observed_matched_gap": 0.6819356354240075,
+            "bootstrap_standard_error": 0.019419335763095864,
+            "lower_bound": 0.5763875470721033,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.004054054054054054,
+            "observed_matched_gap": -0.022972972972972974,
+            "bootstrap_standard_error": 0.07374279830220844,
+            "lower_bound": -0.423780265532876,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.023068949885138627,
+            "lower_bound": -0.152411519594969,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0009009009009009008,
+            "observed_matched_gap": -0.026126126126126126,
+            "bootstrap_standard_error": 0.039205305959149665,
+            "lower_bound": -0.23921503646381284,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.07981859410430839,
+            "observed_matched_gap": 0.05124716553287982,
+            "bootstrap_standard_error": 0.035670691141647094,
+            "lower_bound": -0.14263038548752838,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.00816326530612245,
+            "observed_matched_gap": -0.02040816326530612,
+            "bootstrap_standard_error": 0.014469184199515973,
+            "lower_bound": -0.09905115862319785,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.02857142857142857,
+            "target_normal_fpr": 0.6287981859410431,
+            "observed_matched_gap": 0.6002267573696145,
+            "bootstrap_standard_error": 0.02765413292766463,
+            "lower_bound": 0.44992085086732514,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.0,
+            "lower_bound": 0.0,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.04320557491289198,
+            "observed_matched_gap": -0.005574912891986064,
+            "bootstrap_standard_error": 0.062087911123381335,
+            "lower_bound": -0.34303549387074045,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.28710801393728225,
+            "observed_matched_gap": 0.2383275261324042,
+            "bootstrap_standard_error": 0.042544186163950476,
+            "lower_bound": 0.007091114399615295,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.04878048780487805,
+            "target_normal_fpr": 0.25993031358885016,
+            "observed_matched_gap": 0.21114982578397218,
+            "bootstrap_standard_error": 0.127567716797004,
+            "lower_bound": -0.4822069814518661,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.10606060606060606,
+            "observed_matched_gap": 0.07575757575757576,
+            "bootstrap_standard_error": 0.04668785878443241,
+            "lower_bound": -0.1780005498578856,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.045791245791245785,
+            "observed_matched_gap": 0.015488215488215488,
+            "bootstrap_standard_error": 0.040849453864746366,
+            "lower_bound": -0.20653697724968104,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.030303030303030304,
+            "target_normal_fpr": 0.6131313131313131,
+            "observed_matched_gap": 0.5828282828282828,
+            "bootstrap_standard_error": 0.03599145431360775,
+            "lower_bound": 0.3872073179224996,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.03472222222222222,
+            "target_normal_fpr": 0.08935185185185185,
+            "observed_matched_gap": 0.05462962962962963,
+            "bootstrap_standard_error": 0.03262970510329886,
+            "lower_bound": -0.12271953612734166,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.041666666666666664,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.041666666666666664,
+            "bootstrap_standard_error": 0.012991515395827442,
+            "lower_bound": -0.11227822782159441,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.041666666666666664,
+            "target_normal_fpr": 0.3282407407407407,
+            "observed_matched_gap": 0.28657407407407404,
+            "bootstrap_standard_error": 0.07725088496680346,
+            "lower_bound": -0.13330039182985604,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      },
+      {
+        "family_id": "superadd_p95_gain_1p4_calmin:image-score",
+        "threshold": {
+          "rule": "superadd_p95_gain_1p4_calmin",
+          "definition": "calibration minimum plus 1.4 times its distance to empirical P95",
+          "parameters": {
+            "quantile": 0.95,
+            "quantile_method": "higher",
+            "gain": 1.4
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "image-score",
+        "family_size": 24,
+        "critical_value": 4.689860532364525,
+        "positive_cell_count": 7,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.17129629629629628,
+            "observed_matched_gap": 0.17129629629629628,
+            "bootstrap_standard_error": 0.015980106832023156,
+            "lower_bound": 0.09635182396182217,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.007246376811594202,
+            "target_normal_fpr": 0.45370370370370366,
+            "observed_matched_gap": 0.44645732689210954,
+            "bootstrap_standard_error": 0.0741445287454026,
+            "lower_bound": 0.09872982783827883,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.03623188405797101,
+            "target_normal_fpr": 0.8209541062801933,
+            "observed_matched_gap": 0.7847222222222221,
+            "bootstrap_standard_error": 0.03168045418695295,
+            "lower_bound": 0.636145310483449,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0005872680291284942,
+            "observed_matched_gap": 0.0005872680291284943,
+            "bootstrap_standard_error": 0.01242180077132165,
+            "lower_bound": -0.057669245149188135,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.023255813953488372,
+            "target_normal_fpr": 0.016913319238900635,
+            "observed_matched_gap": -0.0063424947145877385,
+            "bootstrap_standard_error": 0.024007651689114003,
+            "lower_bound": -0.11893503284611803,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.007751937984496124,
+            "target_normal_fpr": 0.7070707070707071,
+            "observed_matched_gap": 0.6993187690862109,
+            "bootstrap_standard_error": 0.009967587312301131,
+            "lower_bound": 0.6525721747473525,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.018018018018018018,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.018018018018018018,
+            "bootstrap_standard_error": 0.017969990266849298,
+            "lower_bound": -0.1022947661374892,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.025452648014926353,
+            "lower_bound": -0.1463963963963964,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.03333333333333333,
+            "observed_matched_gap": -0.020720720720720717,
+            "bootstrap_standard_error": 0.0588797908036546,
+            "lower_bound": -0.29685872776466016,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.041043083900226755,
+            "observed_matched_gap": 0.04104308390022675,
+            "bootstrap_standard_error": 0.035058172122263344,
+            "lower_bound": -0.12337485387281837,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.00999234398645058,
+            "lower_bound": -0.04686269968786458,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.009523809523809523,
+            "target_normal_fpr": 0.5961451247165532,
+            "observed_matched_gap": 0.5866213151927437,
+            "bootstrap_standard_error": 0.028248771148344495,
+            "lower_bound": 0.4541385182963252,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.03508771929824561,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.03508771929824561,
+            "bootstrap_standard_error": 0.06318735021259692,
+            "lower_bound": -0.3314275792049991,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.21418128654970758,
+            "observed_matched_gap": 0.21418128654970758,
+            "bootstrap_standard_error": 0.06112166150052365,
+            "lower_bound": -0.07247078139414259,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.6542397660818714,
+            "observed_matched_gap": 0.6542397660818714,
+            "bootstrap_standard_error": 0.023111772191510373,
+            "lower_bound": 0.545848777847907,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.024390243902439025,
+            "bootstrap_standard_error": 0.015520917090717925,
+            "lower_bound": -0.09718118039229906,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.03252032520325203,
+            "target_normal_fpr": 0.19558652729384435,
+            "observed_matched_gap": 0.16306620209059233,
+            "bootstrap_standard_error": 0.05849406025549176,
+            "lower_bound": -0.11126278247939089,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.2013937282229965,
+            "observed_matched_gap": 0.1770034843205575,
+            "bootstrap_standard_error": 0.1063847177127444,
+            "lower_bound": -0.3219260045271837,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.055892255892255896,
+            "observed_matched_gap": 0.055892255892255896,
+            "bootstrap_standard_error": 0.03919259712659484,
+            "lower_bound": -0.12791555853262454,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0101010101010101,
+            "target_normal_fpr": 0.0303030303030303,
+            "observed_matched_gap": 0.0202020202020202,
+            "bootstrap_standard_error": 0.030126326879254803,
+            "lower_bound": -0.12108625121410943,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0202020202020202,
+            "target_normal_fpr": 0.6395622895622896,
+            "observed_matched_gap": 0.6193602693602693,
+            "bootstrap_standard_error": 0.048869218622966115,
+            "lower_bound": 0.39017044969292713,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.00023148148148148146,
+            "observed_matched_gap": 0.0002314814814814815,
+            "bootstrap_standard_error": 0.011813385381916803,
+            "lower_bound": -0.05517164837478216,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.013888888888888888,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.013888888888888888,
+            "bootstrap_standard_error": 0.010137050798506029,
+            "lower_bound": -0.06143024334337661,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.013888888888888888,
+            "target_normal_fpr": 0.20752314814814812,
+            "observed_matched_gap": 0.19363425925925926,
+            "bootstrap_standard_error": 0.045782991583098696,
+            "lower_bound": -0.021081586019892573,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      },
+      {
+        "family_id": "superadd_p95_gain_1p4_calmin:map-maximum-image-decision",
+        "threshold": {
+          "rule": "superadd_p95_gain_1p4_calmin",
+          "definition": "calibration minimum plus 1.4 times its distance to empirical P95",
+          "parameters": {
+            "quantile": 0.95,
+            "quantile_method": "higher",
+            "gain": 1.4
+          },
+          "decision_operator": ">"
+        },
+        "endpoint": "map-maximum-image-decision",
+        "family_size": 24,
+        "critical_value": 5.074818527324724,
+        "positive_cell_count": 7,
+        "positive_categories": [
+          "can",
+          "fabric",
+          "rice",
+          "sheet_metal",
+          "wallplugs"
+        ],
+        "positive_detectors": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "gate_passed": true,
+        "cells": [
+          {
+            "category": "can",
+            "detector": "patchcore",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.1527777777777778,
+            "observed_matched_gap": 0.1527777777777778,
+            "bootstrap_standard_error": 0.01187142955738239,
+            "lower_bound": 0.09253242711414329,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "padim",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.007246376811594202,
+            "target_normal_fpr": 0.45370370370370366,
+            "observed_matched_gap": 0.44645732689210954,
+            "bootstrap_standard_error": 0.0741445287454026,
+            "lower_bound": 0.07018729871517987,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "can",
+            "detector": "efficient_ad",
+            "calibration_count": 46,
+            "target_normal_count": 72,
+            "source_normal_fpr": 0.03623188405797101,
+            "target_normal_fpr": 0.8209541062801933,
+            "observed_matched_gap": 0.7847222222222221,
+            "bootstrap_standard_error": 0.03168045418695295,
+            "lower_bound": 0.6239496663602111,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fabric",
+            "detector": "patchcore",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.010667812782592313,
+            "lower_bound": -0.054137213955130985,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "padim",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.023255813953488372,
+            "target_normal_fpr": 0.016913319238900635,
+            "observed_matched_gap": -0.0063424947145877385,
+            "bootstrap_standard_error": 0.024007651689114003,
+            "lower_bound": -0.1281769703040622,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fabric",
+            "detector": "efficient_ad",
+            "calibration_count": 43,
+            "target_normal_count": 66,
+            "source_normal_fpr": 0.007751937984496124,
+            "target_normal_fpr": 0.7070707070707071,
+            "observed_matched_gap": 0.6993187690862109,
+            "bootstrap_standard_error": 0.009967587312301131,
+            "lower_bound": 0.6487350723210183,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "patchcore",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.009009009009009009,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.009009009009009009,
+            "bootstrap_standard_error": 0.015955121953263846,
+            "lower_bound": -0.08997835750315782,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "padim",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.02702702702702703,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.02702702702702703,
+            "bootstrap_standard_error": 0.025452648014926353,
+            "lower_bound": -0.15619459674265015,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "fruit_jelly",
+            "detector": "efficient_ad",
+            "calibration_count": 37,
+            "target_normal_count": 20,
+            "source_normal_fpr": 0.05405405405405406,
+            "target_normal_fpr": 0.03333333333333333,
+            "observed_matched_gap": -0.020720720720720717,
+            "bootstrap_standard_error": 0.0588797908036546,
+            "lower_bound": -0.319524973976111,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "patchcore",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.032199546485260765,
+            "observed_matched_gap": 0.03219954648526077,
+            "bootstrap_standard_error": 0.035333326815513134,
+            "lower_bound": -0.14711067507012476,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "padim",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": 0.0,
+            "bootstrap_standard_error": 0.00999234398645058,
+            "lower_bound": -0.05070933239384119,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "rice",
+            "detector": "efficient_ad",
+            "calibration_count": 35,
+            "target_normal_count": 42,
+            "source_normal_fpr": 0.009523809523809523,
+            "target_normal_fpr": 0.5961451247165532,
+            "observed_matched_gap": 0.5866213151927437,
+            "bootstrap_standard_error": 0.028248771148344495,
+            "lower_bound": 0.44326392799496894,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "patchcore",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.017543859649122806,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.017543859649122806,
+            "bootstrap_standard_error": 0.05891375358100638,
+            "lower_bound": -0.3165204678362573,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "padim",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.21418128654970758,
+            "observed_matched_gap": 0.21418128654970758,
+            "bootstrap_standard_error": 0.06112166150052365,
+            "lower_bound": -0.09600005365402015,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "sheet_metal",
+            "detector": "efficient_ad",
+            "calibration_count": 19,
+            "target_normal_count": 24,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.6542397660818714,
+            "observed_matched_gap": 0.6542397660818714,
+            "bootstrap_standard_error": 0.023111772191510373,
+            "lower_bound": 0.5369517163650862,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "vial",
+            "detector": "patchcore",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.024390243902439025,
+            "bootstrap_standard_error": 0.01831010585559205,
+            "lower_bound": -0.11731070833567447,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "padim",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.03252032520325203,
+            "target_normal_fpr": 0.19558652729384435,
+            "observed_matched_gap": 0.16306620209059233,
+            "bootstrap_standard_error": 0.05849406025549176,
+            "lower_bound": -0.13378053863242603,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "vial",
+            "detector": "efficient_ad",
+            "calibration_count": 41,
+            "target_normal_count": 35,
+            "source_normal_fpr": 0.024390243902439025,
+            "target_normal_fpr": 0.2013937282229965,
+            "observed_matched_gap": 0.1770034843205575,
+            "bootstrap_standard_error": 0.1063847177127444,
+            "lower_bound": -0.3628796521522885,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "patchcore",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.045286195286195284,
+            "observed_matched_gap": 0.04528619528619529,
+            "bootstrap_standard_error": 0.042165857463343996,
+            "lower_bound": -0.1686978793893163,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "padim",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0101010101010101,
+            "target_normal_fpr": 0.0303030303030303,
+            "observed_matched_gap": 0.0202020202020202,
+            "bootstrap_standard_error": 0.030126326879254803,
+            "lower_bound": -0.13268362160506292,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "wallplugs",
+            "detector": "efficient_ad",
+            "calibration_count": 33,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0202020202020202,
+            "target_normal_fpr": 0.6395622895622896,
+            "observed_matched_gap": 0.6193602693602693,
+            "bootstrap_standard_error": 0.048869218622966115,
+            "lower_bound": 0.37135785327655846,
+            "unsupported": false,
+            "supports_positive_gap": true
+          },
+          {
+            "category": "walnuts",
+            "detector": "patchcore",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.0,
+            "target_normal_fpr": 0.0004629629629629629,
+            "observed_matched_gap": 0.000462962962962963,
+            "bootstrap_standard_error": 0.015924279117744976,
+            "lower_bound": -0.08034986373805945,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "padim",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.013888888888888888,
+            "target_normal_fpr": 0.0,
+            "observed_matched_gap": -0.013888888888888888,
+            "bootstrap_standard_error": 0.010137050798506029,
+            "lower_bound": -0.06533258209357917,
+            "unsupported": true,
+            "supports_positive_gap": false
+          },
+          {
+            "category": "walnuts",
+            "detector": "efficient_ad",
+            "calibration_count": 48,
+            "target_normal_count": 60,
+            "source_normal_fpr": 0.013888888888888888,
+            "target_normal_fpr": 0.20752314814814812,
+            "observed_matched_gap": 0.19363425925925926,
+            "bootstrap_standard_error": 0.045782991583098696,
+            "lower_bound": -0.03870611466300189,
+            "unsupported": true,
+            "supports_positive_gap": false
+          }
+        ]
+      }
+    ]
+  },
+  "full_n_rankings": {
+    "threshold_calibration": "frozen full-n nominal validation threshold",
+    "seed_aggregation": "mean across three seeds",
+    "records": [
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "can",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fabric",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.8164965809277261,
+        "reversal_count": 2
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.8164965809277261,
+        "reversal_count": 0
+      },
+      {
+        "category": "fruit_jelly",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.8164965809277261,
+        "reversal_count": 2
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.8164965809277261,
+        "reversal_count": 2
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.8164965809277261,
+        "reversal_count": 2
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "rice",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "sheet_metal",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -1.0,
+        "reversal_count": 3
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.8164965809277261,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.8164965809277261,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "vial",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "padim",
+          "efficient_ad",
+          "patchcore"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "wallplugs",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "padim",
+          "patchcore"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 1.0,
+        "reversal_count": 0
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.0,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "image-score",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "empirical_p95",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "mvtec_mean_plus_3std",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "patchcore",
+          "efficient_ad",
+          "padim"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.3333333333333333,
+        "reversal_count": 1
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "split_conformal_05",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-normal-fpr",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "padim",
+          "patchcore",
+          "efficient_ad"
+        ],
+        "kendall_tau_b": 0.8164965809277261,
+        "reversal_count": 0
+      },
+      {
+        "category": "walnuts",
+        "endpoint": "map-maximum-image-decision",
+        "threshold_rule": "superadd_p95_gain_1p4_calmin",
+        "criterion": "target-anomaly-recall",
+        "auroc_order": [
+          "patchcore",
+          "padim",
+          "efficient_ad"
+        ],
+        "operating_point_order": [
+          "efficient_ad",
+          "patchcore",
+          "padim"
+        ],
+        "kendall_tau_b": -0.3333333333333333,
+        "reversal_count": 2
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "role": "schema",
+      "path": "experiments/OPERATING_POINT_TRANSPORT_REPORT_SCHEMA_V1.json",
+      "sha256": "eefdd4c744bc3cd201260291cfdd5a5570bec9534fda92f39d4195a3cdea7707"
+    },
+    {
+      "role": "matched-result",
+      "path": "experiments/tables/calibration_resampled_matched_v1.json",
+      "sha256": "fac072f9b97c4454dfc5d36b582291ac6db0d770cf52e9ee246e0aff61fa1be2"
+    },
+    {
+      "role": "matched-components",
+      "path": "experiments/tables/calibration_size_matched_v1.json",
+      "sha256": "bb2f1e39c23565050ad60cf77bacc5d7a5df475fe75377965dc8a936554edffc"
+    },
+    {
+      "role": "full-n-rankings",
+      "path": "experiments/tables/operating_point_transport_rankings_v1.json",
+      "sha256": "ae04161192b8a61fc21546fcd2226d4bb6bc74efc4982d7483f65cf90ecb2e89"
+    },
+    {
+      "role": "protocol",
+      "path": "experiments/CALIBRATION_RESAMPLED_PROTOCOL.md",
+      "sha256": "4cee78517adbebe507957fbbba6980a9cd59134d5d8d65f101a91ef1797d11bf"
+    }
+  ]
+}
