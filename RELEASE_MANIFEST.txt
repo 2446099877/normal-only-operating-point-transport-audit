@@ -1,6 +1,7 @@
 Normal-only Operating-Point Transport Audit
 Prepared: 2026-09-12
-Public DOI: TO_BE_ASSIGNED
+Fixed public release: v1.0.0
+DOI: NOT_ASSIGNED
 
 experiments/OPERATING_POINT_TRANSPORT_REPORT_SCHEMA_V1.json
 experiments/tables/calibration_resampled_matched_v1.json
