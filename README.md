@@ -38,4 +38,6 @@ derived aggregate audit artifacts only.
 - Prepared: 2026-09-12
 - Manuscript result artifact SHA-256: `fac072f9b97c4454dfc5d36b582291ac6db0d770cf52e9ee246e0aff61fa1be2`
 - Report SHA-256: `40558585a5ae36e800b172012d15c1635eae284e7b83247c81354d4606fccb18`
-- Public DOI: **to be assigned by the repository host**
+- Fixed public release: `v1.0.0` at
+  `https://github.com/2446099877/normal-only-operating-point-transport-audit/releases/tag/v1.0.0`
+- DOI: not assigned; cite the tagged GitHub release until a DOI archive is created.
