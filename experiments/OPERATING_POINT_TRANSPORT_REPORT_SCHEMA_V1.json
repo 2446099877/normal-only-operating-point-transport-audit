@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "operating-point-transport-report-v1",
+  "title": "Normal-only operating-point transport audit bundle",
+  "type": "object",
+  "required": ["schema_version", "study", "matched_analysis", "full_n_rankings", "artifacts"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "study": {"$ref": "#/$defs/study"},
+    "matched_analysis": {"$ref": "#/$defs/matchedAnalysis"},
+    "full_n_rankings": {"$ref": "#/$defs/rankings"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/artifact"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "required": ["role", "path", "sha256"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "study": {
+      "type": "object",
+      "required": ["dataset", "evidence_timing", "categories", "detectors", "seeds", "seed_aggregation"],
+      "properties": {
+        "dataset": {"const": "MVTec AD 2 public"},
+        "evidence_timing": {"const": "post-result-corrective"},
+        "categories": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"type": "string"}},
+        "detectors": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "seeds": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "integer"}},
+        "seed_aggregation": {"const": "mean; seeds are not independent images"}
+      },
+      "additionalProperties": false
+    },
+    "threshold": {
+      "type": "object",
+      "required": ["rule", "definition", "parameters", "decision_operator"],
+      "properties": {
+        "rule": {"enum": ["empirical_p95", "split_conformal_05", "mvtec_mean_plus_3std", "superadd_p95_gain_1p4_calmin"]},
+        "definition": {"type": "string", "minLength": 1},
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "alpha": {"type": "number"},
+            "quantile": {"type": "number"},
+            "quantile_method": {"type": "string"},
+            "std_multiplier": {"type": "number"},
+            "ddof": {"type": "integer"},
+            "gain": {"type": "number"}
+          },
+          "additionalProperties": false
+        },
+        "decision_operator": {"const": ">"}
+      },
+      "additionalProperties": false
+    },
+    "cell": {
+      "type": "object",
+      "required": ["category", "detector", "calibration_count", "target_normal_count", "source_normal_fpr", "target_normal_fpr", "observed_matched_gap", "bootstrap_standard_error", "lower_bound", "unsupported", "supports_positive_gap"],
+      "properties": {
+        "category": {"type": "string"},
+        "detector": {"type": "string"},
+        "calibration_count": {"type": "integer", "minimum": 2},
+        "target_normal_count": {"type": "integer", "minimum": 1},
+        "source_normal_fpr": {"type": "number", "minimum": 0, "maximum": 1},
+        "target_normal_fpr": {"type": "number", "minimum": 0, "maximum": 1},
+        "observed_matched_gap": {"type": "number", "minimum": -1, "maximum": 1},
+        "bootstrap_standard_error": {"type": "number", "minimum": 0},
+        "lower_bound": {"type": "number"},
+        "unsupported": {"type": "boolean"},
+        "supports_positive_gap": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "family": {
+      "type": "object",
+      "required": ["family_id", "threshold", "endpoint", "family_size", "critical_value", "positive_cell_count", "positive_categories", "positive_detectors", "gate_passed", "cells"],
+      "properties": {
+        "family_id": {"type": "string", "minLength": 1},
+        "threshold": {"$ref": "#/$defs/threshold"},
+        "endpoint": {"enum": ["image-score", "map-maximum-image-decision"]},
+        "family_size": {"const": 24},
+        "critical_value": {"type": "number", "minimum": 0},
+        "positive_cell_count": {"type": "integer", "minimum": 0, "maximum": 24},
+        "positive_categories": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "positive_detectors": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "gate_passed": {"type": "boolean"},
+        "cells": {"type": "array", "minItems": 24, "maxItems": 24, "items": {"$ref": "#/$defs/cell"}}
+      },
+      "additionalProperties": false
+    },
+    "matchedAnalysis": {
+      "type": "object",
+      "required": ["estimand_version", "estimand", "calibration_threshold", "target_normals_fixed", "confidence", "bootstrap_replicates", "bootstrap_seed", "uncertainty_scope", "family_multiplicity", "gate", "families"],
+      "properties": {
+        "estimand_version": {"const": "loo-matched-v1"},
+        "estimand": {"type": "string", "minLength": 1},
+        "calibration_threshold": {"const": "n-1 leave-one-out threshold shared by source and target indicators"},
+        "target_normals_fixed": {"const": true},
+        "confidence": {"const": 0.95},
+        "bootstrap_replicates": {"const": 20000},
+        "bootstrap_seed": {"const": 20260813},
+        "uncertainty_scope": {"const": "approximate calibration-sample inference conditional on fixed target-normal benchmark"},
+        "family_multiplicity": {"const": "24 cells controlled within each family; no control across eight families"},
+        "gate": {
+          "type": "object",
+          "required": ["minimum_categories", "minimum_detectors", "all_families_must_pass", "passed"],
+          "properties": {
+            "minimum_categories": {"const": 2},
+            "minimum_detectors": {"const": 2},
+            "all_families_must_pass": {"const": true},
+            "passed": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "families": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/family"}}
+      },
+      "additionalProperties": false
+    },
+    "rankingRecord": {
+      "type": "object",
+      "required": ["category", "endpoint", "threshold_rule", "criterion", "auroc_order", "operating_point_order", "kendall_tau_b", "reversal_count"],
+      "properties": {
+        "category": {"type": "string"},
+        "endpoint": {"enum": ["image-score", "map-maximum-image-decision"]},
+        "threshold_rule": {"type": "string"},
+        "criterion": {"enum": ["target-normal-fpr", "target-anomaly-recall"]},
+        "auroc_order": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "operating_point_order": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "kendall_tau_b": {"type": "number", "minimum": -1, "maximum": 1},
+        "reversal_count": {"type": "integer", "minimum": 0, "maximum": 3}
+      },
+      "additionalProperties": false
+    },
+    "rankings": {
+      "type": "object",
+      "required": ["threshold_calibration", "seed_aggregation", "records"],
+      "properties": {
+        "threshold_calibration": {"const": "frozen full-n nominal validation threshold"},
+        "seed_aggregation": {"const": "mean across three seeds"},
+        "records": {"type": "array", "minItems": 128, "maxItems": 128, "items": {"$ref": "#/$defs/rankingRecord"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}
